@@ -1,0 +1,95 @@
+.title {
+    padding: 15px;
+}
+
+.titleimg {
+    width: 50%;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+.header {
+    font-size: 14px;
+    font-weight: 800;
+    color: black;
+}
+
+.optiontext {
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+}
+
+#selectedtext {
+    height: 40px;
+    font-size: 11px;
+    line-height: 1;
+}
+
+.disabled {
+    color: #ccc;
+}
+
+.bigrow {
+    padding-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="checkbox"],
+button,
+label {
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+#actiondiv {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.savednote {
+    font-size: 12px;
+    color: #28a745;
+}
+
+.langbox .optiontext {
+    margin-right: 6px;
+}
+
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+    -webkit-box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-default:active,
+.btn-primary:active,
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active {
+    margin-top: 3px;
+    margin-bottom: -3px;
+}

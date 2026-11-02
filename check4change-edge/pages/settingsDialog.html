@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Check4Change</title>
+    <link rel="stylesheet" type="text/css" href="/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="general.css">
+    <script src="/libs/featherlight/jquery.min.js"></script>
+    <script src="/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/both/i18n.js"></script>
+    <script src="/both/common.js"></script>
+    <script src="/pages/page-common.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <p class="title text-center">
+        <img class="titleimg" src="/icons/c4c_biglogo.gif" alt="check4change"/>
+    </p>
+
+    <div class="row bigrow">
+        <div class="col-5">
+            <label for="selectedtext" class="header" data-i18n="lookFor"></label>
+        </div>
+        <div class="col-7">
+            <textarea readonly class="form-control data-text" id="selectedtext"></textarea>
+        </div>
+    </div>
+
+    <div class="row bigrow">
+        <div class="col-5">
+            <label for="duration" class="header" data-i18n="reloadEvery"></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="duration" class="numeric param form-control form-control-sm">
+        </div>
+        <div class="col-5">
+            <select id="units" class="param form-control form-control-sm">
+                <option value="seconds" data-i18n="unitSeconds"></option>
+                <option value="minutes" data-i18n="unitMinutes"></option>
+                <option value="hours" data-i18n="unitHours"></option>
+            </select>
+        </div>
+    </div>
+    <br>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#notifications" role="tab" data-i18n="tabNotifications"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#advanced" role="tab" data-i18n="tabAdvanced"></a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="notifications" role="tabpanel">
+
+            <p class="header" data-i18n="whenChange"></p>
+
+            <div class="row">
+                <div class="col-4">
+                    <label for="notifySound" class="optiontext"><input id="notifySound" class="param" type="checkbox"><span data-i18n="playSound"></span></label>
+                </div>
+
+                <div class="col-4">
+                    <select id="soundChoice" class="form-control form-control-sm">
+                        <option value="change.mp3" data-i18n="soundDefault"></option>
+                        <option value="change2.mp3" data-i18n="soundN" data-i18n-args='{"n": 1}'></option>
+                        <option value="change3.mp3" data-i18n="soundN" data-i18n-args='{"n": 2}'></option>
+                        <option value="change4.mp3" data-i18n="soundN" data-i18n-args='{"n": 3}'></option>
+                        <option value="change5.mp3" data-i18n="soundN" data-i18n-args='{"n": 4}'></option>
+                        <option value="change6.mp3" data-i18n="soundN" data-i18n-args='{"n": 5}'></option>
+                    </select>
+                    <button id="selectfile" type="button" class="btn btn-link btn-sm" data-i18n="selectFile"></button>
+                </div>
+
+                <div class="col-4">
+                    <div>
+                        <span class="align-top optiontext" data-i18n="volume"></span>
+                        <input class="align-top param" style="width: 60px" id="volume" type="range" min="0" max="1" step="0.01">
+                    </div>
+                    <div class="text-center">
+                        <button id="testSound" type="button" class="btn btn-link btn-sm" data-i18n="play"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="fileError" class="text-danger small"></div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="doAnimation" class="optiontext"><input id="doAnimation" class="param" type="checkbox"><span data-i18n="animateIcon"></span></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="notifyPopup" class="optiontext"><input id="notifyPopup" class="param" type="checkbox"><span data-i18n="showNotification"></span></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="notifyFocus" class="optiontext"><input id="notifyFocus" class="param" type="checkbox"><span data-i18n="bringToFront"></span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="advanced" role="tabpanel">
+            <div class="row">
+                <div class="col">
+                    <label for="doContinue" class="optiontext"><input id="doContinue" class="param" type="checkbox"><span data-i18n="doContinue"></span></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="dontReload" class="optiontext"><input id="dontReload" class="param" type="checkbox"><span data-i18n="dontReload"></span></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="checkHTML" class="optiontext"><input id="checkHTML" class="param" type="checkbox"><span data-i18n="checkHTML"></span></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="noOverlay" class="optiontext"><input id="noOverlay" class="param" type="checkbox"><span data-i18n="noOverlay"></span></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="audioLoop" class="optiontext"><input id="audioLoop" class="param" type="checkbox"><span data-i18n="audioLoop"></span></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <label for="doRandom" class="optiontext"><input id="doRandom" class="param" type="checkbox"><span data-i18n="doRandom"></span></label>
+                </div>
+                <div class="col-2">
+                    <input type="text" id="randomPercentage" class="numeric param form-control form-control-sm">
+                </div>
+                <div class="col-1">
+                    <span>%</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <label for="delayDuration" class="optiontext" data-i18n="delayDuration"></label>
+                </div>
+                <div class="col-2">
+                    <input type="text" id="delayDuration" class="numeric param form-control form-control-sm">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="actiondiv" class="text-center">
+        <button id="start" type="button" class="btn btn-primary col-5" data-i18n="start"></button>
+    </div>
+
+    <div class="footer-row">
+        <div>
+            <button id="saveDefaults" type="button" class="btn btn-link btn-sm" data-i18n="saveDefaults"></button>
+            <span id="savedNote" class="savednote"></span>
+        </div>
+        <div class="langbox form-inline">
+            <label for="uiLang" class="optiontext" data-i18n="language"></label>
+            <select id="uiLang" class="form-control form-control-sm">
+                <option value="auto" data-i18n="langAuto"></option>
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+            </select>
+        </div>
+    </div>
+
+    <input id="soundFileChooser" accept="audio/*" type="file" class="d-none"/>
+</div>
+
+<script src="/pages/settingsDialog.js"></script>
+</body>
+</html>

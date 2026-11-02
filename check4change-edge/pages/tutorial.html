@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Check4Change</title>
+    <link rel="stylesheet" type="text/css" href="/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="general.css">
+    <style>
+        .header {
+            font-size: 16px;
+        }
+        .bullets li {
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="/libs/featherlight/jquery.min.js"></script>
+    <script src="/both/i18n.js"></script>
+    <script src="/both/common.js"></script>
+    <script src="/pages/page-common.js"></script>
+</head>
+<body>
+<div class="container">
+    <p class="title text-center">
+        <img class="titleimg" src="/icons/c4c_biglogo.gif" alt="check4change"/>
+    </p>
+
+    <p class="header"><span data-i18n="tutIntro"></span><br><span data-i18n="tutUsage"></span></p>
+    <ol class="bullets">
+        <li data-i18n="tutStep1"></li>
+        <li data-i18n="tutStep2"></li>
+        <li data-i18n="tutStep3"></li>
+    </ol>
+
+    <div id="actiondiv" class="text-center">
+        <button id="ok" type="button" class="btn btn-info col-3 closebutton" data-i18n="ok"></button>
+    </div>
+</div>
+<script src="/pages/tutorial.js"></script>
+</body>
+</html>

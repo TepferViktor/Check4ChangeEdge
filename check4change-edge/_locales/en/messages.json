@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Check4Change"
+  },
+  "extDescription": {
+    "message": "Periodically reloads a web page and alerts you when the selected text changes."
+  }
+}
